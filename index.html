@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#132f38">
+<title>Recall — Spaced repetition trainer</title>
+<link rel="preload" href="/assets/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<script src="/app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="brand" translate="no">
+        <span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><rect x="8" y="11" width="23" height="24" rx="4" stroke="currentColor" stroke-width="2"/><path d="M12 6h18a4 4 0 0 1 4 4v20M14 17h11M14 22h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <span>recall<span class="brand-period">.</span></span>
+      </div>
+      <p class="brand-sub">A place for what you want to remember.</p>
+    </div>
+    <nav aria-label="Main navigation">
+      <button class="nav-item active" data-view="today" type="button"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m8 12 2.5 2.5L16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Today</span><span id="nav-count" class="nav-count"></span></button>
+      <button class="nav-item" data-view="library" type="button"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 9h4M8 12h4M19 7v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>Library</span></button>
+      <button class="nav-item" data-view="insights" type="button"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 18V12M10 18V7M15 18v-4M20 18V5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>Insights</span></button>
+      <button class="nav-item" data-view="data" type="button"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 8h14m0 0-3-3m3 3-3 3M19 16H5m0 0 3-3m-3 3 3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nav-label-full">Backup &amp; import</span><span class="nav-label-short">Backup</span></button>
+    </nav>
+    <div class="sidebar-note"><span class="note-line" aria-hidden="true"></span><p>Make a little room for<br>what matters.</p></div>
+    <div class="sidebar-foot"><span class="pulse"></span> Stored on this computer</div>
+  </aside>
+  <main id="main" tabindex="-1"></main>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="editor" aria-labelledby="dialog-title">
+  <form id="editor-form" autocomplete="off">
+    <div class="dialog-head"><div><p class="dialog-kicker">Your library</p><h2 id="dialog-title"></h2></div><button type="button" class="icon-button" id="close-dialog" aria-label="Close editor"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
+    <div id="editor-fields"></div>
+    <div class="dialog-actions"><button type="button" class="button quiet" id="cancel-dialog">Cancel</button><button class="button primary" type="submit">Save changes</button></div>
+  </form>
+</dialog>
+<dialog id="confirm-dialog" aria-labelledby="confirm-title">
+  <div class="confirm-body">
+    <div class="confirm-mark" aria-hidden="true">!</div>
+    <h2 id="confirm-title"></h2>
+    <p id="confirm-copy"></p>
+    <div class="dialog-actions"><button type="button" class="button quiet" id="confirm-cancel">Cancel</button><button type="button" class="button danger-solid" id="confirm-accept">Confirm</button></div>
+  </div>
+</dialog>
+</body>
+</html>
